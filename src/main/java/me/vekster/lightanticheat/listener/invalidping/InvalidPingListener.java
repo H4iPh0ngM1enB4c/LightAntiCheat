@@ -15,7 +15,7 @@ public class InvalidPingListener implements Listener {
 
     @EventHandler
     public void onAsyncPacketReceive(LACAsyncPacketReceiveEvent event) {
-        if (event.getLacPlayer().getPing(true) <= 10000)
+        if (event.getLacPlayer().getPing(true) <= 1000)
             return;
         Scheduler.runTask(true, () -> {
             if (!event.getPlayer().isOnline())
